@@ -1,4 +1,4 @@
-# Madylan Microgreens website
+# Tiny Harvest Microgreens website
 
 GitHub Pages-ready static site export.
 
