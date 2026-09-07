@@ -1,0 +1,2 @@
+Optional local icon files: instagram.png, facebook.png, tiktok.png
+The current site uses Font Awesome CDN icons.
