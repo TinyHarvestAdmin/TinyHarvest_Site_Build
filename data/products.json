@@ -3,7 +3,7 @@
     {
       "id": "broccoli",
       "name": "Broccoli Microgreens",
-      "price": 3.5,
+      "price": 4.5,
       "unit": "punnet",
       "active": true,
       "sort": 1,
