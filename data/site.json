@@ -2,4 +2,6 @@
   "currency": "GBP",
   "currencySymbol": "£",
   "returningCustomerDiscountPercent": 5
+  "stripePaymentLink": "https://buy.stripe.com/YOUR_PAYMENT_LINK_HERE",
+  "paypalPaymentLink": "https://www.paypal.com/ncp/payment/YOUR_PAYPAL_LINK_HERE"
 }
