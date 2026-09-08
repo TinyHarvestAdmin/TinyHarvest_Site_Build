@@ -1,0 +1,69 @@
+{
+  "products": [
+    {
+      "id": "broccoli",
+      "name": "Broccoli Microgreens",
+      "price": 3.5,
+      "unit": "punnet",
+      "active": true,
+      "sort": 1,
+      "subtitle": "Mild, fresh and nutrient-packed",
+      "notes": "Fresh green flavour for sandwiches, wraps, salads and smoothies.",
+      "emoji": "🥦",
+      "image": "assets/images/broccoli.jpg"
+    }
+
+    {
+      "id": "sunflower",
+      "name": "Sunflower Microgreens",
+      "price": 3.5,
+      "unit": "punnet",
+      "active": true,
+      "sort": 1,
+      "subtitle": "Crunchy, nutty and satisfying",
+      "notes": "Adds texture and a gentle nutty flavour to everyday meals.",
+      "emoji": "🌻",
+      "image": "assets/images/sunflower.jpg"
+    }
+
+    {
+      "id": "radish",
+      "name": Radish Microgreens",
+      "price": 3.5,
+      "unit": "punnet",
+      "active": true,
+      "sort": 1,
+      "subtitle": "Peppery, vivid and bold",
+      "notes": "A punchy radish variety with deep colour and a bold bite.",
+      "emoji": "🌱",
+      "image": "assets/images/radish.jpg"
+    }
+
+    {
+      "id": "pea",
+      "name": Pea (Speckled) Microgreens",
+      "price": 3.5,
+      "unit": "punnet",
+      "active": true,
+      "sort": 1,
+      "subtitle": "Sweet, crisp and tender",
+      "notes": "Sweet pea-shoot flavour with a crisp bite for lunches and stir-fries.",
+      "emoji": "🌱",
+      "image": "assets/images/pea.jpg"
+    }
+
+    {
+      "id": "saladmix",
+      "name": Salad Mix Microgreens",
+      "price": 3.5,
+      "unit": "punnet",
+      "active": true,
+      "sort": 1,
+      "subtitle": "Balanced, colourful and versatile",
+      "notes": "A bright everyday mix for salads, sandwiches and finishing dishes.",
+      "emoji": "🥗",
+      "image": "assets/images/saladmix.jpg"
+    }
+	
+  ]
+}
