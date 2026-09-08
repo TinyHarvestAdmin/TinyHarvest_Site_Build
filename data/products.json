@@ -11,7 +11,7 @@
       "notes": "Fresh green flavour for sandwiches, wraps, salads and smoothies.",
       "emoji": "🥦",
       "image": "assets/images/broccoli.jpg"
-    }
+    },
 
     {
       "id": "sunflower",
@@ -24,11 +24,11 @@
       "notes": "Adds texture and a gentle nutty flavour to everyday meals.",
       "emoji": "🌻",
       "image": "assets/images/sunflower.jpg"
-    }
+    },
 
     {
       "id": "radish",
-      "name": Radish Microgreens",
+      "name": "Radish Microgreens",
       "price": 3.5,
       "unit": "punnet",
       "active": true,
@@ -37,11 +37,11 @@
       "notes": "A punchy radish variety with deep colour and a bold bite.",
       "emoji": "🌱",
       "image": "assets/images/radish.jpg"
-    }
+    },
 
     {
       "id": "pea",
-      "name": Pea (Speckled) Microgreens",
+      "name": "Pea (Speckled) Microgreens",
       "price": 3.5,
       "unit": "punnet",
       "active": true,
@@ -50,11 +50,11 @@
       "notes": "Sweet pea-shoot flavour with a crisp bite for lunches and stir-fries.",
       "emoji": "🌱",
       "image": "assets/images/pea.jpg"
-    }
+    },
 
     {
       "id": "saladmix",
-      "name": Salad Mix Microgreens",
+      "name": "Salad Mix Microgreens",
       "price": 3.5,
       "unit": "punnet",
       "active": true,
