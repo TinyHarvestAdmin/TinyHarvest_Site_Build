@@ -4,4 +4,5 @@
   "returningCustomerDiscountPercent": 5,
   "stripePaymentLink": "https://buy.stripe.com/YOUR_PAYMENT_LINK_HERE",
   "paypalPaymentLink": "https://www.paypal.com/ncp/payment/YOUR_PAYPAL_LINK_HERE"
+  "orderWebAppUrl": "https://script.google.com/macros/s/AKfycbwq4tJF8f0QLeXvUBupwnSsI6iPD97TJ-vwXY9c5dO3dOccmOL4XBsdQMk4sMBXdwUT/exec"
 }
