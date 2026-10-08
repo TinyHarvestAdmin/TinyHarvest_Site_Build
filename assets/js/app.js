@@ -124,6 +124,81 @@ function closeCheckout() {
   document.getElementById("checkout")?.classList.remove("open");
 }
 
+function orderItems() {
+  return products
+    .filter((p) => cart[p.id] > 0)
+    .map((p) => p.name + " x" + cart[p.id])
+    .join("; ");
+}
+
+function fieldValue(id) {
+  return document.getElementById(id)?.value.trim() || "";
+}
+
+function setOrderStatus(message) {
+  const el = document.getElementById("orderStatus");
+  if (el) el.textContent = message;
+}
+
+async function placeOrder() {
+  const t = calc();
+  if (t.count === 0) {
+    setOrderStatus("Add at least one punnet first.");
+    return;
+  }
+
+  const payload = {
+    name: fieldValue("orderName"),
+    email: fieldValue("orderEmail"),
+    phone: fieldValue("orderPhone"),
+    address: fieldValue("orderAddress"),
+    postcode: fieldValue("orderPostcode"),
+    delivery_note: fieldValue("orderNote"),
+    items: orderItems(),
+    subtotal: t.subtotal.toFixed(2),
+    returning_customer: isReturningCustomer() ? "yes" : "no",
+    discount: t.discount.toFixed(2),
+    total: t.total.toFixed(2)
+  };
+
+  const missing = ["name", "email", "address", "postcode"].filter((key) => !payload[key]);
+  if (missing.length || !payload.email.includes("@")) {
+    setOrderStatus("Name, email, address and postcode are required.");
+    return;
+  }
+
+  const url = site.orderWebAppUrl;
+  if (!url) {
+    setOrderStatus("Order link is missing from data/site.json.");
+    return;
+  }
+
+  const button = document.getElementById("placeOrder");
+  if (button) button.disabled = true;
+  setOrderStatus("Sending order…");
+
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      redirect: "follow",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    if (!data.ok || !data.order_id) {
+      throw new Error(data.error || "Order was not accepted");
+    }
+    cart = Object.fromEntries(products.map((p) => [p.id, 0]));
+    renderCart();
+    setOrderStatus("Order " + data.order_id + " received. We will confirm payment separately.");
+  } catch (err) {
+    console.error(err);
+    setOrderStatus("Order was not saved. Check the connection and try again.");
+  } finally {
+    if (button) button.disabled = false;
+  }
+}
+
 function goPayment(type) {
   const t = calc();
   if (t.count === 0) {
