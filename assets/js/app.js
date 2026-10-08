@@ -140,6 +140,10 @@ function setOrderStatus(message) {
   if (el) el.textContent = message;
 }
 
+function isReturningCustomer(){
+  return !!document.getElementByID("returning")?.checkeded;
+}
+
 async function placeOrder() {
   const t = calc();
   if (t.count === 0) {
