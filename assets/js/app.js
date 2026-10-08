@@ -140,9 +140,6 @@ function setOrderStatus(message) {
   if (el) el.textContent = message;
 }
 
-function isReturningCustomer(){
-  return !!document.getElementByID("returning")?.checkeded;
-}
 
 async function placeOrder() {
   const t = calc();
@@ -160,7 +157,7 @@ async function placeOrder() {
     delivery_note: fieldValue("orderNote"),
     items: orderItems(),
     subtotal: t.subtotal.toFixed(2),
-    returning_customer: isReturningCustomer() ? "yes" : "no",
+    returning_customer: "no",
     discount: t.discount.toFixed(2),
     total: t.total.toFixed(2)
   };
