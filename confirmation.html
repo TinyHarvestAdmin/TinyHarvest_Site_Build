@@ -39,13 +39,13 @@ const id = orderId || saved.order_id || "";
 const box = document.getElementById("orderBox");
 if (!id) {
   document.getElementById("orderTitle").textContent = "No order on this page";
-  document.getElementById("orderLead").textContent = "Place an order from the shop and this page will show the number.";
+  document.getElementById("orderLead").textContent = "Place an order from the shop and this page will show the order number.";
   box.textContent = "";
 } else {
   document.getElementById("orderTitle").textContent = id;
   const lines = [
     saved.name ? "<b>" + saved.name + "</b>" : "",
-    saved.email || "",
+    saved.email || "" + "<br>" + "<br>",
     saved.items ? saved.items.replaceAll("; ", "<br>") : "",
     saved.total ? "<b>Total £" + Number(saved.total).toFixed(2) + "</b>" : ""
   ].filter(Boolean);
