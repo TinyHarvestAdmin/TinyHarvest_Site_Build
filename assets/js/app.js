@@ -189,9 +189,18 @@ async function placeOrder() {
     if (!data.ok || !data.order_id) {
       throw new Error(data.error || "Order was not accepted");
     }
+    
     cart = Object.fromEntries(products.map((p) => [p.id, 0]));
     renderCart();
-    setOrderStatus("Order " + data.order_id + " received. We will confirm payment separately.");
+    /*setOrderStatus("Order " + data.order_id + " received. We will confirm payment separately.");*/
+    sessionStorage.setItem("th-order", JSON.stringify({
+      order_id: data.order_id,
+      name: payload.name,
+      email: payload.email,
+      items: payload.items,
+      total: payload.total
+    }));
+    window.location.href = "confirmation.html?order=" + encodeURIComponent(data.order_id);
   } catch (err) {
     console.error(err);
     setOrderStatus("Order was not saved. Check the connection and try again.");
