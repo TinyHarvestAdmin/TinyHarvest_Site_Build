@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Order received | Tiny Harvest Microgreens</title>
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <span class="logo"><img src="assets/images/logo.jpg" alt="Tiny Harvest Microgreens logo"></span>
+      <span><span class="brand-title">Tiny Harvest</span><small class="brand-sub">Microgreens</small></span>
+    </a>
+    <nav class="links"><a href="index.html#shop">Shop</a></nav>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="wrap" style="max-width:720px">
+      <span class="eyebrow">Order received</span>
+      <h1 id="orderTitle">Thank you</h1>
+      <p class="lead" id="orderLead">Your order is in. Payment is confirmed separately.</p>
+      <div class="payment-note" id="orderBox"></div>
+      <div class="cta">
+        <a class="btn primary" href="index.html#shop">Back to the shop</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>2026 Tiny Harvest Microgreens</footer>
+<script>
+const params = new URLSearchParams(location.search);
+const orderId = params.get("order") || "";
+let saved = {};
+try { saved = JSON.parse(sessionStorage.getItem("th-order") || "{}"); } catch (e) {}
+const id = orderId || saved.order_id || "";
+const box = document.getElementById("orderBox");
+if (!id) {
+  document.getElementById("orderTitle").textContent = "No order on this page";
+  document.getElementById("orderLead").textContent = "Place an order from the shop and this page will show the number.";
+  box.textContent = "";
+} else {
+  document.getElementById("orderTitle").textContent = id;
+  const lines = [
+    saved.name ? "<b>" + saved.name + "</b>" : "",
+    saved.email || "",
+    saved.items ? saved.items.replaceAll("; ", "<br>") : "",
+    saved.total ? "<b>Total £" + Number(saved.total).toFixed(2) + "</b>" : ""
+  ].filter(Boolean);
+  box.innerHTML = lines.join("<br>");
+}
+</script>
+</body>
+</html>
